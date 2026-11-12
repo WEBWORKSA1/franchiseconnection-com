@@ -1,0 +1,14 @@
+---
+layout: "fc"
+root: ""
+title: "Disclaimer | FranchiseConnection.com"
+description: "Important limitations on franchise information, category investment ranges, calculators, earnings, advertising and third-party content on FranchiseConnection.com."
+h1: "Disclaimer"
+group: "Legal"
+navtitle: "Disclaimer"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include disclaimer.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

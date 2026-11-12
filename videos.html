@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Videos — Buying, FDD, SBA Financing & Validation Explained | FranchiseConnection.com"
+description: "A curated library of 22 franchise education videos from attorneys, consultants and owners: how to buy a franchise, reading the FDD, SBA loans, validation calls and franchising your business."
+section: "videos"
+h1: "Video library"
+group: "Community"
+navtitle: "Video library"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include videos.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

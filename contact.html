@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Contact FranchiseConnection.com"
+description: "Contact FranchiseConnection.com with questions, corrections, franchisor listings, advertising, partnerships or privacy requests. We reply within one business day."
+section: "contact"
+h1: "Contact"
+group: "Company"
+navtitle: "Contact"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include contact.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

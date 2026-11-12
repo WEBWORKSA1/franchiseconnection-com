@@ -1,0 +1,14 @@
+---
+layout: "fc"
+root: ""
+title: "Trademark & Copyright Disclosure | FranchiseConnection.com"
+description: "Trademark and copyright disclosure for FranchiseConnection.com: descriptive use of the domain name, no affiliation with similarly named businesses, third-party marks, embedded media and takedown requests."
+h1: "Trademark and copyright"
+group: "Legal"
+navtitle: "Trademark and copyright"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include trademark.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

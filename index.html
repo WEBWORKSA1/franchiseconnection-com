@@ -1,0 +1,16 @@
+---
+layout: "fc"
+root: ""
+title: "FranchiseConnection.com — Find, Compare & Finance the Right Franchise"
+description: "Free, brand-neutral franchise tools: see what you can afford, compare 75 franchise categories on typical investment, fees and owner role, and get a personal franchise match report."
+section: "home"
+h1: "Home"
+group: "Find a franchise"
+navtitle: "Home"
+priority: "1.0"
+fresh: true
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include index.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,14 @@
+---
+layout: "fc"
+root: ""
+title: "Privacy Policy | FranchiseConnection.com"
+description: "How FranchiseConnection.com collects, uses and protects personal information, including Google AdSense advertising cookies, form submissions, and your privacy rights."
+h1: "Privacy policy"
+group: "Legal"
+navtitle: "Privacy policy"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include privacy.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

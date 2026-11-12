@@ -1,0 +1,14 @@
+# FranchiseConnection.com is built by GitHub Pages' own Jekyll on every push to main.
+# Page bodies live in src/pages/ (used as the includes folder). The small stub
+# files at the repo root and in guides/ give each page its front matter and pull
+# its body in. Shared header, footer and article frame: _layouts/fc.html.
+title: FranchiseConnection.com
+url: https://franchiseconnection.com
+includes_dir: src/pages
+exclude:
+  - src
+  - tools
+  - automation
+  - README.md
+  - BUILD-PROMPTS.md
+  - RESEARCH.md

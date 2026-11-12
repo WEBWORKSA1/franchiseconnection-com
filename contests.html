@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Contests & Prizes — Pitch Challenge and Monthly Franchise IQ Quiz | FranchiseConnection.com"
+description: "Enter the quarterly Franchise Pitch Challenge and the monthly Franchise IQ quiz giveaway. Free to enter, no purchase necessary. Official rules included."
+section: "contests"
+h1: "Contests and prizes"
+group: "Community"
+navtitle: "Contests and prizes"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include contests.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

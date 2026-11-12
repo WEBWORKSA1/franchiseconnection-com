@@ -1,0 +1,12 @@
+---
+layout: "fc"
+root: ""
+title: "Page not found | FranchiseConnection.com"
+description: "The page you were looking for could not be found."
+navtitle: "Page not found"
+sitemap: false
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include 404.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

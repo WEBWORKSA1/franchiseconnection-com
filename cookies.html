@@ -1,0 +1,14 @@
+---
+layout: "fc"
+root: ""
+title: "Cookie Policy | FranchiseConnection.com"
+description: "The cookies and local storage FranchiseConnection.com and its partners use, including Google AdSense advertising cookies, and how to control them."
+h1: "Cookie policy"
+group: "Legal"
+navtitle: "Cookie policy"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include cookies.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

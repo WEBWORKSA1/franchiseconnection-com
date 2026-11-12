@@ -1,0 +1,14 @@
+---
+layout: "fc"
+root: ""
+title: "Terms of Use | FranchiseConnection.com"
+description: "Terms governing use of FranchiseConnection.com, its tools, content, forms, listings, contests and advertising."
+h1: "Terms of use"
+group: "Legal"
+navtitle: "Terms of use"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include terms.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

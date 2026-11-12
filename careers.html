@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Careers & Contributors — Write, Film and Partner with FranchiseConnection.com"
+description: "Open roles and contributor programs at FranchiseConnection.com: franchise writers, video creators, franchise consultant partners, partnership sales and campus ambassadors. Remote-friendly."
+section: "careers"
+h1: "Careers and contributors"
+group: "Community"
+navtitle: "Careers and contributors"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include careers.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

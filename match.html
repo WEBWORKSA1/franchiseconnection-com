@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Get Matched — Free Franchise Match Report in 2 Minutes | FranchiseConnection.com"
+description: "Answer seven quick questions about your budget, goals, owner role and timeline. Get a ranked shortlist of franchise categories that fit, the financing math, and optional introductions."
+section: "match"
+h1: "Get matched: free franchise match report"
+group: "Find a franchise"
+navtitle: "Get matched: free franchise match report"
+priority: "0.9"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include match.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

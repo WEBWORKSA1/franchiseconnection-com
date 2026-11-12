@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Support FranchiseConnection.com — Keep Franchise Tools Free and Independent"
+description: "Support independent franchise education with a one-time or monthly contribution. Funds go to operations, new tools, promotion, hiring writers and contest prizes."
+section: "support"
+h1: "Support us"
+group: "Community"
+navtitle: "Support us"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include support.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

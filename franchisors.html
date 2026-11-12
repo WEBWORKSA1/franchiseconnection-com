@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "For Franchisors — List Your Franchise & Get Qualified Buyer Leads | FranchiseConnection.com"
+description: "Reach franchise buyers who have already stated their liquid capital, timeline, territory and owner role. Free brand listing, featured placement and pay-per-qualified-lead programs."
+section: "franchisors"
+h1: "For franchisors"
+group: "Franchisors"
+navtitle: "For franchisors"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include franchisors.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,16 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Expos & Events 2026–2027 — US & Canada Calendar | FranchiseConnection.com"
+description: "Upcoming franchise expos, shows and conferences in the US and Canada, with an automatic countdown. Tips for getting the most out of a franchise expo as a buyer."
+section: "events"
+h1: "Expos and events"
+group: "Community"
+navtitle: "Expos and events"
+priority: "0.6"
+fresh: true
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include events.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "About FranchiseConnection.com — Independent Franchise Research and Matching"
+description: "FranchiseConnection.com is an independent franchise education and matching service: brand-neutral category data, calculators and guides for buyers, and a qualified-buyer channel for franchisors."
+section: "about"
+h1: "About"
+group: "Company"
+navtitle: "About"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include about.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

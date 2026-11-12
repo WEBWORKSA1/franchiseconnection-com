@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Glossary — 100 Franchise Terms Explained | FranchiseConnection.com"
+description: "Plain-English definitions of 100 franchise terms: FDD, Item 19, royalty, area developer, ROBS, SBA 7(a), protected territory, transfer fee and more."
+section: "guides"
+h1: "Glossary"
+group: "Learn"
+navtitle: "Glossary"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include glossary.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

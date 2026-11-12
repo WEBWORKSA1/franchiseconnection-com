@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Opportunities Explorer — Compare 75 Franchise Categories by Cost | FranchiseConnection.com"
+description: "Filter 75 franchise categories by budget, industry, owner role, home-based and recurring revenue. Compare typical investment, franchise fees and royalties side by side, then request information."
+section: "explore"
+h1: "Franchise category explorer"
+group: "Find a franchise"
+navtitle: "Franchise category explorer"
+priority: "0.9"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include explore.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Resources — FDD Databases, Regulators, Associations & Free Help | FranchiseConnection.com"
+description: "Official franchise resources: FTC Franchise Rule, state FDD databases, SBA Franchise Directory, franchise associations in the US, Canada, UK and Australia, and free small-business mentoring."
+section: "resources"
+h1: "Resources"
+group: "Learn"
+navtitle: "Resources"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include resources.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Editorial Policy & Methodology | FranchiseConnection.com"
+description: "How FranchiseConnection.com researches franchise categories, sets investment ranges, writes guides, labels sponsored content and corrects errors."
+section: "about"
+h1: "Editorial policy"
+group: "Company"
+navtitle: "Editorial policy"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include editorial-policy.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

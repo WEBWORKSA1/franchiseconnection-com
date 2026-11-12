@@ -1,0 +1,9 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- for p in site.html_pages -%}{%- if p.sitemap != false and p.layout == "fc" %}
+<url><loc>https://franchiseconnection.com/{% unless p.url == "/" %}{{ p.url | remove_first: "/" }}{% endunless %}</loc><lastmod>{% if p.fresh %}{{ today }}{% else %}{{ p.reviewed | default: p.pubdate | default: "2026-11-12" }}{% endif %}</lastmod><priority>{{ p.priority | default: "0.6" }}</priority></url>
+{%- endif -%}{%- endfor %}
+</urlset>

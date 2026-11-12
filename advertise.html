@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Advertise, Sponsor or Partner with FranchiseConnection.com"
+description: "Advertising, sponsorship and partnership options on FranchiseConnection.com: sponsored guides and videos, newsletter sponsorship, calculator and event sponsorship, consultant and lender partnerships."
+section: "advertise"
+h1: "Advertise, sponsor or partner"
+group: "Franchisors"
+navtitle: "Advertise, sponsor or partner"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include advertise.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

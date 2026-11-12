@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Guides — Buying, Financing, FDD, Costs & Franchising Your Business | FranchiseConnection.com"
+description: "In-depth, brand-neutral franchise guides: how to buy a franchise, the FDD's 23 items, financing, validation questions, true costs, red flags, multi-unit ownership, international laws and more."
+section: "guides"
+h1: "All guides"
+group: "Learn"
+navtitle: "All guides"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include guides.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

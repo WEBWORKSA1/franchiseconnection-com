@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Franchise Calculators — Affordability, SBA Loan, Break-even, Royalty Cost | FranchiseConnection.com"
+description: "Six free franchise calculators: affordability check, total investment estimator, SBA 7(a) loan payment, break-even and payback, lifetime royalty cost, and multi-unit cash curve."
+section: "tools"
+h1: "Franchise calculators"
+group: "Find a franchise"
+navtitle: "Franchise calculators"
+priority: "0.9"
+---
+{%- assign root = page.root -%}
+{%- capture fragment -%}{% include tools.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

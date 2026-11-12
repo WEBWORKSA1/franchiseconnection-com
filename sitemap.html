@@ -1,0 +1,15 @@
+---
+layout: "fc"
+root: ""
+title: "Sitemap | FranchiseConnection.com"
+description: "Every page on FranchiseConnection.com: tools, franchise guides, category explorer, news, events, franchisor programs, company and legal pages."
+h1: "Sitemap"
+group: "Company"
+navtitle: "Sitemap"
+priority: "0.6"
+---
+{%- assign root = page.root -%}
+{%- capture sitemap -%}{%- assign groups = site.html_pages | group_by: "group" | sort: "name" -%}{%- for g in groups -%}{%- if g.name != "" -%}<div class="panel"><h2 style="font-size:1.25rem">{{ g.name }}</h2><ul>{%- assign items = g.items | sort: "navtitle" -%}{%- for p in items -%}<li><a href="{{ root }}{% if p.url == "/" %}index.html{% else %}{{ p.url | remove_first: "/" }}{% endif %}">{{ p.navtitle | escape }}</a></li>{%- endfor -%}</ul></div>{%- endif -%}{%- endfor -%}{%- endcapture -%}
+{%- capture fragment -%}{% include sitemap.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

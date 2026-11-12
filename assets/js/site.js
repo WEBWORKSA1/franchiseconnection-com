@@ -370,10 +370,57 @@
     set('m-verdict', 'Peak cash needed is about ' + moneyFull(-minCum) + ' — that, not the total build cost, is what your financing plan must cover.');
   });
 
-  /* ---------- News feed (self-updating) ---------- */
+  /* ---------- News feed (self-updating) ----------
+     Base: data/news.json (seed + daily refresh when the optional workflow runs).
+     Live: public Google News RSS searches read through rss2json in the visitor's
+     browser, merged on top, cached for an hour so each visitor makes at most one
+     round of requests per hour. Any failure falls back to the base file. */
+  var NEWS_QUERIES = [
+    ['Expansions', 'franchise expansion new locations'],
+    ['Deals', 'franchise development agreement multi-unit'],
+    ['Deals', 'franchisor acquisition franchise brand acquired'],
+    ['Lending', 'SBA franchise loan financing'],
+    ['Industry data', 'franchise industry trends report'],
+    ['Events', 'franchise expo OR franchise conference']
+  ];
+  function newsKey(t) { return String(t).toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 70); }
+  function liveFeed(topic, q) {
+    var rss = 'https://news.google.com/rss/search?q=' + encodeURIComponent(q + ' when:14d') + '&hl=en-US&gl=US&ceid=US:en';
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var t = setTimeout(function () { if (ctrl) ctrl.abort(); }, 6000);
+    return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss), ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { clearTimeout(t); if (!r.ok) throw 0; return r.json(); })
+      .then(function (j) {
+        if (!j || j.status !== 'ok') return [];
+        return (j.items || []).map(function (it) {
+          var title = String(it.title || '').trim(), source = String(it.author || '').trim(), cut = title.lastIndexOf(' - ');
+          if (cut > 20) { source = source || title.slice(cut + 3); title = title.slice(0, cut); }
+          var dt = it.pubDate ? new Date(String(it.pubDate).replace(' ', 'T') + 'Z') : null;
+          return { title: title, link: it.link, source: source, date: dt && !isNaN(dt) ? dt.toISOString() : '', topic: topic };
+        }).filter(function (i) { return i.title && /^https?:\/\//.test(i.link || '') && /franchis/i.test(i.title); });
+      })
+      .catch(function () { return []; });
+  }
+  function newsData() {
+    var CK = 'fc_news_live_v1', cached = null;
+    try { cached = JSON.parse(store(CK) || 'null'); } catch (e) { cached = null; }
+    if (cached && cached.t > Date.now() - 36e5 && cached.d && cached.d.items && cached.d.items.length) return Promise.resolve(cached.d);
+    var base = fetchFresh('data/news.json').catch(function () { return { items: [] }; });
+    var live = Promise.all(NEWS_QUERIES.map(function (x) { return liveFeed(x[0], x[1]); }));
+    return Promise.all([base, live]).then(function (r) {
+      var fresh = [].concat.apply([], r[1]), seen = {}, out = [];
+      fresh.concat(r[0].items || []).sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); }).forEach(function (i) {
+        var k = newsKey(i.title); if (!k || seen[k]) return; seen[k] = 1; out.push(i);
+      });
+      var d = { updated: fresh.length ? new Date().toISOString() : r[0].updated, items: out.slice(0, 60) };
+      if (!out.length) throw 0;
+      if (fresh.length) store(CK, JSON.stringify({ t: Date.now(), d: d }));
+      return d;
+    });
+  }
   var nl = $('#newsList');
   if (nl) {
-    fetchFresh('data/news.json').then(function (d) {
+    newsData().then(function (d) {
       var items = d.items || [], cats = ['All'].concat(Array.from(new Set(items.map(function (i) { return i.topic; }))).filter(Boolean));
       var limit = +nl.getAttribute('data-limit') || 999, chips = $('#newsChips'), cur = 'All';
       if ($('#newsUpdated') && d.updated) $('#newsUpdated').textContent = new Date(d.updated).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });

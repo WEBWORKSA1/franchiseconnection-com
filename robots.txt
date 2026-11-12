@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /tools/
+
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://franchiseconnection.com/sitemap.xml

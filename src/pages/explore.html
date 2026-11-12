@@ -1,0 +1,98 @@
+<!--meta
+title: Franchise Opportunities Explorer — Compare 75 Franchise Categories by Cost | FranchiseConnection.com
+description: Filter 75 franchise categories by budget, industry, owner role, home-based and recurring revenue. Compare typical investment, franchise fees and royalties side by side, then request information.
+section: explore
+group: Find a franchise
+h1: Franchise category explorer
+-->
+<section class="page-hero">
+<div class="wrap">
+<p class="crumbs"><a href="{{root}}index.html">Home</a> / Explore</p>
+<h1>Franchise category explorer</h1>
+<p class="lead">75 franchise categories with typical total investment, franchise fee, royalty, owner role and the main risk to check. Filter by budget, compare up to three side by side, save favourites, and request information on the ones you like.</p>
+</div>
+</section>
+<section class="section-tight">
+<div class="wrap explorer" id="explorer">
+<aside class="filters" aria-label="Filters">
+<div class="field"><label for="fq">Search</label><input id="fq" type="search" placeholder="e.g. pilates, cleaning, coffee"></div>
+<div class="field"><label for="fmax">Maximum starting investment</label>
+<select id="fmax"><option value="0">Any amount</option><option value="50000">Up to $50k</option><option value="100000">Up to $100k</option><option value="150000">Up to $150k</option><option value="250000">Up to $250k</option><option value="500000">Up to $500k</option><option value="1000000">Up to $1M</option><option value="2500000">Up to $2.5M</option><option value="5000000">Up to $5M</option></select></div>
+<fieldset id="froles"><legend>Owner role</legend>
+<label class="check"><input type="checkbox" value="owner"><span>Owner-operator</span></label>
+<label class="check"><input type="checkbox" value="semi"><span>Semi-absentee</span></label>
+<label class="check"><input type="checkbox" value="exec"><span>Executive / investor</span></label>
+</fieldset>
+<fieldset id="ftags"><legend>Business traits</legend>
+<label class="check"><input type="checkbox" value="home"><span>Home-based</span></label>
+<label class="check"><input type="checkbox" value="mobile"><span>Mobile / van</span></label>
+<label class="check"><input type="checkbox" value="recurring"><span>Recurring revenue</span></label>
+<label class="check"><input type="checkbox" value="b2b"><span>Business-to-business</span></label>
+<label class="check"><input type="checkbox" value="sba"><span>Often SBA-financed</span></label>
+<label class="check"><input type="checkbox" value="multi"><span>Multi-unit friendly</span></label>
+<label class="check"><input type="checkbox" value="lowstaff"><span>Low staff</span></label>
+</fieldset>
+<fieldset><legend>Industry</legend><div id="findustry"></div></fieldset>
+<label class="check"><input type="checkbox" id="ffav"><span>Show my saved categories only</span></label>
+<button type="button" class="btn btn-ghost btn-block" id="fclear" style="margin-top:14px">Clear all filters</button>
+</aside>
+<div>
+<div class="res-head">
+<p style="margin:0"><b id="resCount">Loading…</b> <span class="muted">— typical ranges from published FDDs; brands vary</span></p>
+<label class="small">Sort <select id="fsort"><option value="low">Lowest starting cost</option><option value="high">Highest ceiling</option><option value="name">A–Z</option></select></label>
+</div>
+<ul class="concepts" id="conceptList"></ul>
+<div class="ad-slot" data-slot="explore-bottom"></div>
+<div class="panel" style="margin-top:28px">
+<h2 style="font-size:1.4rem">How to use these ranges</h2>
+<p>Each band is the typical total initial investment reported in Item 7 of franchise disclosure documents for that category: franchise fee, build-out, equipment, opening inventory, training travel, professional fees and the franchisor's estimate of working capital for the first months. The real figure for a specific brand and site can sit outside the band, especially in high-rent cities.</p>
+<p>Royalty and fee figures are the common structures for the category. Some brands charge flat monthly royalties, tiered percentages or technology fees on top. Read <a href="{{root}}guides/franchise-costs-explained.html">what a franchise really costs</a> and confirm everything in the brand's current FDD with a franchise attorney.</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="basket" id="basket" aria-live="polite">
+<div class="wrap">
+<span><b id="basketCount">0 selected</b> <span id="basketMsg" class="small" style="color:var(--sign)"></span></span>
+<span class="btn-row" style="margin:0"><button type="button" class="btn btn-ghost" style="color:#fff;border-color:#2C6470" id="cmpBtn" disabled>Compare side by side</button><button type="button" class="btn btn-sign" id="reqBtn">Request information</button></span>
+</div>
+</div>
+
+<dialog id="cmpDialog" aria-labelledby="cmpTitle">
+<div class="dlg-head"><h2 id="cmpTitle" style="font-size:1.3rem;margin:0">Side-by-side comparison</h2><button class="x" data-close aria-label="Close">&times;</button></div>
+<div class="dlg-body" id="cmpBody"></div>
+</dialog>
+
+<dialog id="reqDialog" aria-labelledby="reqTitle">
+<div class="dlg-head"><h2 id="reqTitle" style="font-size:1.3rem;margin:0">Request information</h2><button class="x" data-close aria-label="Close">&times;</button></div>
+<div class="dlg-body">
+<p class="small muted">Selected: <b id="reqList"></b></p>
+<form id="reqForm" class="multistep" data-manual novalidate>
+<div class="steps-bar" aria-hidden="true"><span class="on"></span><span></span></div>
+<div class="step active">
+<p class="step-count">Step 1 of 2</p>
+<div class="field"><label for="rq-email">Where should we send the category briefing?</label><input id="rq-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+<label class="check field"><input type="checkbox" name="newsletter" value="Yes"><span>Also send me the monthly Franchise Market Pulse.</span></label>
+<button type="button" class="btn btn-sign" data-next>Continue</button>
+</div>
+<div class="step">
+<p class="step-count">Step 2 of 2</p>
+<div class="row2">
+<div class="field"><label for="rq-name">Full name</label><input id="rq-name" name="name" required autocomplete="name"></div>
+<div class="field"><label for="rq-phone">Phone</label><input id="rq-phone" name="phone" type="tel" autocomplete="tel"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="rq-cap">Cash available to invest</label><select id="rq-cap" name="liquid_capital" required><option value="">Choose…</option><option>Under $25k</option><option>$25k–$50k</option><option>$50k–$100k</option><option>$100k–$250k</option><option>$250k–$500k</option><option>$500k–$1M</option><option>Over $1M</option><option>Prefer not to say</option></select></div>
+<div class="field"><label for="rq-zip">ZIP / postal code</label><input id="rq-zip" name="postal_code" required autocomplete="postal-code"></div>
+</div>
+<div class="field"><label for="rq-time">Timeline</label><select id="rq-time" name="timeline"><option>0–3 months</option><option>3–6 months</option><option selected>6–12 months</option><option>12+ months</option></select></div>
+<input type="hidden" name="categories">
+<input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="check field"><input type="checkbox" name="consent" value="Agreed to contact about selected categories" required><span>I agree to be contacted by FranchiseConnection.com, and by franchisors or advisors in these categories if I ask for introductions. <a href="{{root}}privacy.html">Privacy</a></span></label>
+<div class="btn-row"><button type="button" class="btn btn-ghost" data-prev>Back</button><button type="submit" class="btn btn-sign">Send request</button></div>
+</div>
+<p class="form-msg" role="status"></p>
+</form>
+</div>
+</dialog>

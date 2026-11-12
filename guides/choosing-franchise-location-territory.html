@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "Choosing a Franchise Location and Territory: A Practical Guide | FranchiseConnection.com"
+description: "How to evaluate franchise territories and sites: protected territory terms, demographics, competition, traffic, lease negotiation and the questions to ask the franchisor."
+type: "article"
+h1: "Choosing a franchise location and territory"
+short: "Location &amp; territory"
+lede: "The same franchise can thrive two miles away from where it fails. Territory rights and site choice deserve as much scrutiny as the brand itself."
+group: "Guides"
+minutes: 9
+pubdate: "2026-11-12"
+navtitle: "Choosing a franchise location and territory"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/choosing-franchise-location-territory.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "How to Franchise Your Business: Steps, Costs and Readiness Checklist | FranchiseConnection.com"
+description: "How to turn a successful business into a franchise: franchisability test, legal structure, FDD preparation, state registration, operations manual, training, franchise sales and support."
+type: "article"
+h1: "How to franchise your business"
+short: "Franchise your business"
+lede: "Franchising lets a proven business grow with other people's capital and effort. It also turns you into a different kind of company — one that sells and supports a system. Here is what that takes."
+group: "Guides"
+minutes: 12
+pubdate: "2026-11-12"
+navtitle: "How to franchise your business"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/how-to-franchise-your-business.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "How to Finance a Franchise in 2026: SBA 7(a), 504, ROBS, HELOC & More | FranchiseConnection.com"
+description: "Compare franchise financing options — SBA 7(a) and 504 loans, rollovers as business start-ups (ROBS), home equity, franchisor financing, equipment leasing and investors — with costs, risks and what lenders require."
+type: "article"
+h1: "How to finance a franchise: every option compared"
+short: "Franchise financing"
+lede: "Most franchise buyers combine their own cash with one or two kinds of financing. Here is how each option works, what it costs, and what lenders will ask you for."
+group: "Guides"
+minutes: 13
+pubdate: "2026-11-12"
+navtitle: "How to finance a franchise: every option compared"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/franchise-financing.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

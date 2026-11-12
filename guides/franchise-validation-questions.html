@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "50 Franchise Validation Questions to Ask Franchisees Before You Buy | FranchiseConnection.com"
+description: "The questions to ask current and former franchisees during validation calls — investment, break-even, hours, staffing, franchisor support, marketing, territory — plus how to run the calls."
+type: "article"
+h1: "50 questions to ask franchisees before you buy"
+short: "Validation questions"
+lede: "Franchisee validation calls are the best due diligence you can do, and they are free. Here is how to run them and exactly what to ask."
+group: "Guides"
+minutes: 12
+pubdate: "2026-11-12"
+navtitle: "50 questions to ask franchisees before you buy"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/franchise-validation-questions.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

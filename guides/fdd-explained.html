@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "The Franchise Disclosure Document (FDD) Explained: All 23 Items | FranchiseConnection.com"
+description: "What each of the 23 items in a Franchise Disclosure Document means, which ones matter most (Items 7, 19, 20, 21), and the questions to ask about each."
+type: "article"
+h1: "The FDD explained: all 23 items, and the four that matter most"
+short: "The FDD explained"
+lede: "The Franchise Disclosure Document is the single most important thing you will read before buying a franchise. Here is what each item covers and what to look for."
+group: "Guides"
+minutes: 16
+pubdate: "2026-11-12"
+navtitle: "The FDD explained: all 23 items, and the four that matter most"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/fdd-explained.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "18 Franchise Red Flags to Spot Before You Sign | FranchiseConnection.com"
+description: "Warning signs in the Franchise Disclosure Document, the sales process and the franchisee network — high turnover, earnings claims outside Item 19, pressure tactics, weak financials and more."
+type: "article"
+h1: "18 franchise red flags to spot before you sign"
+short: "Franchise red flags"
+lede: "Most bad franchise purchases show warning signs early. These are the ones experienced franchise attorneys and consultants look for."
+group: "Guides"
+minutes: 10
+pubdate: "2026-11-12"
+navtitle: "18 franchise red flags to spot before you sign"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/franchise-red-flags.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

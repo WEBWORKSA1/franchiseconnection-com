@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "Buying an Existing Franchise (Resale): Valuation, Due Diligence & Transfer | FranchiseConnection.com"
+description: "How to buy an existing franchise unit: where to find resales, how they are valued, what to check in the financials, franchisor approval and transfer fees, and financing a resale."
+type: "article"
+h1: "Buying an existing franchise: the resale route"
+short: "Buying an existing franchise"
+lede: "A resale gives you customers, staff and trading history on day one. You pay for that certainty — and you inherit whatever problems come with it."
+group: "Guides"
+minutes: 10
+pubdate: "2026-11-12"
+navtitle: "Buying an existing franchise: the resale route"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/buying-an-existing-franchise.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

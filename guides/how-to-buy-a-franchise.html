@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "How to Buy a Franchise: The 10-Step Process (2026 Guide) | FranchiseConnection.com"
+description: "A step-by-step guide to buying a franchise in 2026: self-assessment, budgeting, shortlisting, reading the FDD, validation calls, financing, discovery day, legal review, signing and opening."
+type: "article"
+h1: "How to buy a franchise: the 10-step process"
+short: "How to buy a franchise"
+lede: "The order matters as much as the steps. Here is the sequence experienced franchise buyers follow, what each step costs in time, and the questions that decide whether you move forward."
+group: "Guides"
+minutes: 14
+pubdate: "2026-11-12"
+navtitle: "How to buy a franchise: the 10-step process"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/how-to-buy-a-franchise.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "What Does a Franchise Really Cost? Fees, Royalties & Hidden Costs | FranchiseConnection.com"
+description: "Every cost of owning a franchise explained: initial franchise fee, build-out, equipment, working capital, royalties, ad fund, technology fees, training, renewal, transfer and exit costs."
+type: "article"
+h1: "What a franchise really costs"
+short: "Franchise costs explained"
+lede: "The franchise fee is usually the smallest big number. Here is every cost line, where to find it in the FDD, and the ones buyers most often miss."
+group: "Guides"
+minutes: 11
+pubdate: "2026-11-12"
+navtitle: "What a franchise really costs"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/franchise-costs-explained.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

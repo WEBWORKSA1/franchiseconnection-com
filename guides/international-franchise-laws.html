@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "Franchise Laws Compared: US, Canada, UK, Australia, India & EU | FranchiseConnection.com"
+description: "How franchise disclosure rules differ across the United States, Canadian provinces, the United Kingdom, Australia, India and Europe — disclosure periods, registration, cooling-off and rescission rights."
+type: "article"
+h1: "Franchise laws compared: US, Canada, UK, Australia and beyond"
+short: "International franchise laws"
+lede: "The rules that protect franchise buyers differ sharply by country, and in Canada by province. Know which ones apply before you sign."
+group: "Guides"
+minutes: 12
+pubdate: "2026-11-12"
+navtitle: "Franchise laws compared: US, Canada, UK, Australia and beyond"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/international-franchise-laws.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

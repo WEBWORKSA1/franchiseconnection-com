@@ -1,0 +1,21 @@
+---
+layout: "fc"
+root: "../"
+title: "Multi-Unit and Semi-Absentee Franchise Ownership Guide | FranchiseConnection.com"
+description: "How semi-absentee and multi-unit franchise ownership works: which categories suit it, management structures, development agreements, capital planning and the mistakes that sink portfolios."
+type: "article"
+h1: "Multi-unit and semi-absentee franchise ownership"
+short: "Multi-unit & semi-absentee"
+lede: "Owning a franchise without running it day to day is possible in the right categories — but it is a management job, not passive income."
+group: "Guides"
+minutes: 11
+pubdate: "2026-11-12"
+navtitle: "Multi-unit and semi-absentee franchise ownership"
+priority: "0.8"
+---
+{%- assign root = page.root -%}
+{%- capture cta %}<div class="callout"><h3>Get a free franchise match report</h3><p>Answer seven questions about your budget, goals and the hours you want to work. We rank 75 franchise categories for you and email the financing math.</p><a class="btn btn-sign" href="{{ root }}match.html">Get my match report</a></div>{% endcapture -%}
+{%- assign ad = '<div class="ad-slot" data-slot="in-article"></div>' -%}
+{%- capture fragment -%}{% include guides/multi-unit-semi-absentee.html %}{%- endcapture -%}
+{%- assign metablock = fragment | split: "-->" | first | append: "-->" -%}
+{{ fragment | remove_first: metablock }}

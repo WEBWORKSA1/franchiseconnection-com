@@ -1,0 +1,192 @@
+<!--meta
+title: Franchise Calculators — Affordability, SBA Loan, Break-even, Royalty Cost | FranchiseConnection.com
+description: Six free franchise calculators: affordability check, total investment estimator, SBA 7(a) loan payment, break-even and payback, lifetime royalty cost, and multi-unit cash curve.
+section: tools
+group: Find a franchise
+h1: Franchise calculators
+-->
+<section class="page-hero">
+<div class="wrap">
+<p class="crumbs"><a href="{{root}}index.html">Home</a> / Tools</p>
+<h1>Franchise calculators</h1>
+<p class="lead">Six calculators that answer what a lender, a franchisor's development team and your spouse will all ask: can you afford it, what will it cost every month, and when do you get your money back?</p>
+</div>
+</section>
+<section class="section-tight">
+<div class="wrap">
+<div class="tabs" role="tablist" aria-label="Calculators">
+<button role="tab" aria-selected="true" aria-controls="t-afford" id="tab-afford">Affordability</button>
+<button role="tab" aria-selected="false" aria-controls="t-invest" id="tab-invest" tabindex="-1">Total investment</button>
+<button role="tab" aria-selected="false" aria-controls="t-loan" id="tab-loan" tabindex="-1">SBA loan payment</button>
+<button role="tab" aria-selected="false" aria-controls="t-break" id="tab-break" tabindex="-1">Break-even &amp; payback</button>
+<button role="tab" aria-selected="false" aria-controls="t-fees" id="tab-fees" tabindex="-1">Royalty cost</button>
+<button role="tab" aria-selected="false" aria-controls="t-multi" id="tab-multi" tabindex="-1">Multi-unit cash</button>
+</div>
+
+<div class="tool on" id="t-afford" role="tabpanel" aria-labelledby="tab-afford">
+<div class="form-card">
+<h2 style="font-size:1.4rem">Can I afford this franchise?</h2>
+<div class="row2">
+<div class="field"><label for="a-liquid">Liquid capital ($)</label><input id="a-liquid" type="number" min="0" step="1000" value="150000"></div>
+<div class="field"><label for="a-net">Net worth ($)</label><input id="a-net" type="number" min="0" step="5000" value="450000"></div>
+</div>
+<div class="field"><label for="a-target">Total project cost you're considering ($)</label><input id="a-target" type="number" min="0" step="5000" value="350000"></div>
+<div class="row2">
+<div class="field"><label for="a-live">Your monthly living costs ($)</label><input id="a-live" type="number" min="0" step="100" value="5000"></div>
+<div class="field"><label for="a-months">Months of reserve to keep</label><input id="a-months" type="number" min="0" max="36" value="6"></div>
+</div>
+<p class="fine">Assumes a 25% cash injection, the midpoint of what SBA lenders typically ask for on a new franchise.</p>
+</div>
+<div class="readout" aria-live="polite">
+<p style="margin:0">Cash left for the business after your reserve</p>
+<div class="big" id="a-avail">$0</div>
+<dl><dt>Typical cash injection needed</dt><dd id="a-need">$0</dd><dt>Living reserve held back</dt><dd id="a-reserve">$0</dd><dt>Coverage of the injection</dt><dd id="a-pct">0%</dd></dl>
+<div class="meter"><i id="a-meter"></i></div>
+<p class="verdict" id="a-verdict"></p>
+<a class="btn btn-sign" href="{{root}}match.html">Match me to categories I can afford</a>
+</div>
+</div>
+
+<div class="tool" id="t-invest" role="tabpanel" aria-labelledby="tab-invest">
+<div class="form-card">
+<h2 style="font-size:1.4rem">Total investment estimator (Item 7 style)</h2>
+<div class="row2">
+<div class="field"><label for="i-fee">Initial franchise fee</label><input id="i-fee" type="number" min="0" step="1000" value="45000"></div>
+<div class="field"><label for="i-build">Build-out / leasehold improvements</label><input id="i-build" type="number" min="0" step="5000" value="180000"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="i-equip">Equipment, furniture, signage</label><input id="i-equip" type="number" min="0" step="1000" value="85000"></div>
+<div class="field"><label for="i-inv">Opening inventory &amp; supplies</label><input id="i-inv" type="number" min="0" step="1000" value="15000"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="i-open">Grand-opening marketing</label><input id="i-open" type="number" min="0" step="1000" value="15000"></div>
+<div class="field"><label for="i-train">Training travel &amp; lodging</label><input id="i-train" type="number" min="0" step="500" value="5000"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="i-pro">Legal, accounting, permits, deposits</label><input id="i-pro" type="number" min="0" step="500" value="15000"></div>
+<div class="field"><label for="i-wc">Working capital (first 3–6 months)</label><input id="i-wc" type="number" min="0" step="1000" value="50000"></div>
+</div>
+<div class="field"><label for="i-cont">Contingency buffer (%)</label><input id="i-cont" type="number" min="0" max="50" value="10"></div>
+</div>
+<div class="readout" aria-live="polite">
+<p style="margin:0">Estimated total initial investment</p>
+<div class="big" id="i-total">$0</div>
+<dl><dt>Contingency included</dt><dd id="i-contv">$0</dd><dt>Cash injection at 25%</dt><dd id="i-cash">$0</dd><dt>Amount to finance at 75%</dt><dd id="i-loan">$0</dd></dl>
+<p class="verdict" id="i-verdict"></p>
+<a class="btn btn-sign" href="{{root}}guides/franchise-costs-explained.html">What every cost line means</a>
+</div>
+</div>
+
+<div class="tool" id="t-loan" role="tabpanel" aria-labelledby="tab-loan">
+<div class="form-card">
+<h2 style="font-size:1.4rem">SBA 7(a) loan payment</h2>
+<div class="field"><label for="l-amt">Total project cost ($)</label><input id="l-amt" type="number" min="0" step="5000" value="400000"></div>
+<div class="row2">
+<div class="field"><label for="l-down">Cash injection (%)</label><input id="l-down" type="number" min="0" max="100" value="25"></div>
+<div class="field"><label for="l-rate">Interest rate (%)</label><input id="l-rate" type="number" min="0" max="30" step="0.25" value="10.5"></div>
+</div>
+<div class="field"><label for="l-years">Term (years)</label><select id="l-years"><option value="7">7 years</option><option value="10" selected>10 years (typical for franchise business loans)</option><option value="25">25 years (when real estate is included)</option></select></div>
+<p class="fine">SBA 7(a) variable rates are set at the prime rate plus a capped spread, so check today's prime with your lender. The maximum 7(a) loan is $5 million.</p>
+</div>
+<div class="readout" aria-live="polite">
+<p style="margin:0">Estimated monthly payment</p>
+<div class="big" id="l-pay">$0</div>
+<dl><dt>Loan amount</dt><dd id="l-loanv">$0</dd><dt>Your cash injection</dt><dd id="l-downv">$0</dd><dt>Total interest over term</dt><dd id="l-int">$0</dd><dt>Annual debt service</dt><dd id="l-annual">$0</dd></dl>
+<p class="verdict" id="l-dscr"></p>
+<a class="btn btn-sign" href="{{root}}guides/franchise-financing.html">Compare all financing options</a>
+</div>
+</div>
+
+<div class="tool" id="t-break" role="tabpanel" aria-labelledby="tab-break">
+<div class="form-card">
+<h2 style="font-size:1.4rem">Break-even &amp; payback</h2>
+<div class="row2">
+<div class="field"><label for="b-invest">Total investment ($)</label><input id="b-invest" type="number" min="0" step="5000" value="350000"></div>
+<div class="field"><label for="b-rev">Monthly revenue ($)</label><input id="b-rev" type="number" min="0" step="1000" value="60000"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="b-cogs">Cost of goods (% of revenue)</label><input id="b-cogs" type="number" min="0" max="100" value="28"></div>
+<div class="field"><label for="b-labor">Labor incl. payroll taxes ($/mo)</label><input id="b-labor" type="number" min="0" step="500" value="16000"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="b-rent">Rent &amp; occupancy ($/mo)</label><input id="b-rent" type="number" min="0" step="250" value="6500"></div>
+<div class="field"><label for="b-other">Other operating costs ($/mo)</label><input id="b-other" type="number" min="0" step="250" value="4000"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="b-roy">Royalty (%)</label><input id="b-roy" type="number" min="0" max="20" step="0.5" value="6"></div>
+<div class="field"><label for="b-ad">Ad fund (%)</label><input id="b-ad" type="number" min="0" max="10" step="0.5" value="2"></div>
+</div>
+<div class="field"><label for="b-pay">Loan payment ($/mo)</label><input id="b-pay" type="number" min="0" step="100" value="3600"></div>
+</div>
+<div class="readout" aria-live="polite">
+<p style="margin:0">Monthly profit after debt service</p>
+<div class="big" id="b-profit">$0</div>
+<dl><dt>Break-even revenue</dt><dd id="b-be">$0</dd><dt>Royalty + ad fund</dt><dd id="b-fees">$0</dd><dt>Payback period</dt><dd id="b-payback">—</dd><dt>Cash-on-cash return</dt><dd id="b-roi">—</dd></dl>
+<p class="verdict" id="b-verdict"></p>
+<a class="btn btn-sign" href="{{root}}guides/franchise-validation-questions.html">Check these numbers with franchisees</a>
+</div>
+</div>
+
+<div class="tool" id="t-fees" role="tabpanel" aria-labelledby="tab-fees">
+<div class="form-card">
+<h2 style="font-size:1.4rem">True cost of royalties and fees</h2>
+<div class="row2">
+<div class="field"><label for="f-rev">Year-one annual revenue ($)</label><input id="f-rev" type="number" min="0" step="10000" value="600000"></div>
+<div class="field"><label for="f-growth">Annual sales growth (%)</label><input id="f-growth" type="number" min="-20" max="50" value="4"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="f-roy">Royalty (%)</label><input id="f-roy" type="number" min="0" max="20" step="0.5" value="6"></div>
+<div class="field"><label for="f-ad">Ad / brand fund (%)</label><input id="f-ad" type="number" min="0" max="10" step="0.5" value="2"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="f-tech">Technology fee ($/mo)</label><input id="f-tech" type="number" min="0" step="25" value="400"></div>
+<div class="field"><label for="f-years">Franchise term (years)</label><input id="f-years" type="number" min="1" max="30" value="10"></div>
+</div>
+</div>
+<div class="readout" aria-live="polite">
+<p style="margin:0">Ongoing fees over the term</p>
+<div class="big" id="f-total">$0</div>
+<dl><dt>Royalties</dt><dd id="f-royv">$0</dd><dt>Ad / brand fund</dt><dd id="f-adv">$0</dd><dt>Technology fees</dt><dd id="f-techv">$0</dd></dl>
+<p class="verdict" id="f-verdict"></p>
+<a class="btn btn-sign" href="{{root}}guides/franchise-vs-independent.html">Franchise or go independent?</a>
+</div>
+</div>
+
+<div class="tool" id="t-multi" role="tabpanel" aria-labelledby="tab-multi">
+<div class="form-card">
+<h2 style="font-size:1.4rem">Multi-unit cash curve</h2>
+<div class="row2">
+<div class="field"><label for="m-units">Units to open</label><input id="m-units" type="number" min="1" max="20" value="3"></div>
+<div class="field"><label for="m-cost">Investment per unit ($)</label><input id="m-cost" type="number" min="0" step="5000" value="400000"></div>
+</div>
+<div class="row2">
+<div class="field"><label for="m-gap">Months between openings</label><input id="m-gap" type="number" min="1" max="36" value="9"></div>
+<div class="field"><label for="m-ramp">Months to reach mature profit</label><input id="m-ramp" type="number" min="1" max="36" value="12"></div>
+</div>
+<div class="field"><label for="m-profit">Mature profit per unit ($/mo)</label><input id="m-profit" type="number" min="0" step="500" value="9000"></div>
+</div>
+<div class="readout" aria-live="polite">
+<p style="margin:0">Peak cash you'll need</p>
+<div class="big" id="m-peak">$0</div>
+<dl><dt>Total build cost</dt><dd id="m-total">$0</dd><dt>Steady-state profit</dt><dd id="m-steady">$0</dd></dl>
+<p class="verdict" id="m-verdict"></p>
+<a class="btn btn-sign" href="{{root}}guides/multi-unit-semi-absentee.html">Multi-unit &amp; semi-absentee guide</a>
+</div>
+</div>
+</div>
+</section>
+
+<div class="ad-slot" data-slot="tools-mid"></div>
+
+<section class="section band-white">
+<div class="wrap" style="max-width:860px">
+<h2>How to get honest numbers into these calculators</h2>
+<div class="prose" style="font-size:1.05rem">
+<p>A calculator is only as good as the revenue figure you type into it. Franchise sales teams naturally talk about their best locations, so build your inputs from three independent places.</p>
+<p><strong>Item 7 of the FDD</strong> gives the franchisor's own low and high estimate of your initial investment. Use the high end for anything involving construction, and add the contingency the calculator suggests. <strong>Item 19</strong>, when a franchisor provides one, is the only place a franchisor may legally state what units earn. Look for the median, not the average, and check how many units the figures cover and whether closed units were excluded. <strong>Franchisee validation calls</strong> close the gap: ask owners what they spent, how long it took to break even and what a typical month looks like now.</p>
+<p>Labor and rent are where most plans go wrong. Get a real lease quote for your target area and price labor at local wages plus payroll taxes and benefits. If the business only works when the owner works full-time unpaid, that is an important finding, not a rounding error.</p>
+<p>None of these tools give financial, legal or tax advice. Use them to prepare better questions for your accountant, lender and franchise attorney.</p>
+</div>
+<div class="callout"><h3>Turn your numbers into a shortlist</h3><p>The match report ranks 75 categories against your capital and the role you want, then emails you the financing math.</p><a class="btn btn-sign" href="{{root}}match.html">Get my free match report</a></div>
+</div>
+</section>
